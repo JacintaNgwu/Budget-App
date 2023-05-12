@@ -1,0 +1,23 @@
+<div class="c-show-cont">
+    <div>
+        <%= render "shared/navbar" %>
+        <%= render "shared/messages" %>
+        <div class="c-show-cont__title">
+            <p class="c-show-cont__title__text"><%= @category.name %> Category Expenses:</p>
+            <p class="c-show-cont__title__text"><%= number_to_currency(@group_details.sum(:amount)) %></p>
+        </div>
+
+        <% @group_details.each do |detail| %>
+            <div class="c-show-cont__items">
+                <div class="c-show-cont__item">
+                    <p class="c-show-cont__item__text"><%= detail.name %></p>
+                    <p class="c-show-cont__item__text"><%= detail.created_at.strftime("%d %b %y") %></p>
+                </div>
+                <p class="c-show-cont__item__text"><%= number_to_currency(detail.amount) %></p>
+            </div>
+        <% end %>
+    </div>
+    <%= link_to new_category_detail_path(@category), class: "c-show-cont__btn" do %>
+        <p class="c-show-cont__text">Add Transaction</p>
+    <% end %>
+</div>

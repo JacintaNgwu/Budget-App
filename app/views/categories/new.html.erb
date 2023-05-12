@@ -1,0 +1,23 @@
+<div  class="c-new-cont">
+    <%= form_with model: @category, url: categories_path do |form|%>
+
+       <div class="c-new-cont__title">
+            <%= link_to :back do %>
+                <i class="fa-solid fa-arrow-left"></i>
+                <% end %>
+                <h2 class="c-new-cont__title__text">Add Category</h2>
+                <div class="c-new-cont__title__btn">
+                    <%= form.submit "Next", class: "c-new-cont__title__btn__text" %>
+                </div>
+       </div>
+       <%= render "shared/messages" %>
+         <div class="c-new-cont__form">
+                <%= form.text_field :name, placeholder: "Name", class: "c-new-cont__form__label" %>
+                <%= form.text_field :icon_url, placeholder: "Icon url", class: "c-new-cont__form__label" %>
+         </div>
+        <% end %>
+        <% if flash[:error] %>
+                <div><%= flash[:error] %></div>
+        <% end %>
+    </div>
+</div>

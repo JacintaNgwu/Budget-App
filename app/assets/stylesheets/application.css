@@ -1,15 +1,213 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  .home-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .home-cont__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+  }
+
+  .home-cont__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .login,
+  .signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 7vh;
+    color: #fff;
+  }
+
+    .login {
+        background-color: #3778c2;;
+    }
+
+  .signup {
+    background-color: #6c757d;
+  }
+
+  .login-title {
+    text-align: center;
+    margin: 50px;
+    font-size: 40px;
+  }
+
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+
+  }
+
+  .login-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 10vh;
+    margin-bottom: 15px;
+  }
+
+.navbar,
+.c-new-cont__title,
+.t-cont__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3778c2;
+    color: #fff;
+    height: 10vh;
+    width: 100%;
+}
+
+.navbar-title,
+.c-new-cont__title__text,
+.t-cont__form__title {
+    font-size: 35px;
+}
+
+.navbar-link,
+.c-new-cont__title__btn__text,
+.t-cont__form__input__btn {
+    margin-right: 100px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+}
+
+.c-index-cont__new-category,
+.c-show-cont__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color:#5fb523 ;
+    color: #fff;
+    height: 12vh;
+}
+
+.c-index-cont__new-category__text,
+.c-show-cont__text {
+    border: 1px solid #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.c-new-cont__form,
+.t-cont__form__input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.c-new-cont__form__label,
+.t-cont__form__input__field {
+    width: 100%;
+    height: 10vh;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.c-index-cont__category__name,
+.c-show-cont__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    width: 70%;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    margin-top: 50px;
+    margin-left: 200px;
+    padding: 30px;
+}
+
+.c-index-cont__category__name__icon {
+    margin-right: 10px;
+    width: 8%;
+    height: 10vh;
+    margin: 100px;
+    padding: 10px;
+}
+
+.c-index-cont__category__name__text {
+    margin-left: 10px;
+    color: #000;
+}
+
+.c-index-cont__category__amount {
+    margin-right: 200px;
+    color: #000;
+}
+
+.t-cont__form__input__label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    font-size: 20px;
+}
+
+.t-cont__form__input__label__detail {
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 20px;
+}
