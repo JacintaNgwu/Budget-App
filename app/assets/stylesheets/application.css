@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.home-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.home-cont__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 100vh;
+}
+
+.home-cont__header__title {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-cont__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login,
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 7vh;
+  color: #fff;
+}
+
+.login {
+  background-color: #3778c2;
+}
+
+.signup {
+  background-color: #6c757d;
+}
+
+.login-title {
+  text-align: center;
+  margin: 50px;
+  font-size: 40px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.login-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 10vh;
+  margin-bottom: 15px;
+}
+
+.navbar,
+.c-new-cont__title,
+.t-cont__form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3778c2;
+  color: #fff;
+  height: 10vh;
+  width: 100%;
+}
+
+.navbar-title,
+.c-new-cont__title__text,
+.t-cont__form__title {
+  font-size: 35px;
+}
+
+.navbar-link,
+.c-new-cont__title__btn__text,
+.t-cont__form__input__btn {
+  margin-right: 10px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 20px;
+}
+
+.c-index-cont__new-category,
+.c-show-cont__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+  background-color: #5fb523;
+  color: #fff;
+  height: 12vh;
+}
+
+.c-index-cont__new-category__text,
+.c-show-cont__text {
+  border: 1px solid #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  padding: 15px;
+  margin: 10px;
+}
+
+.c-new-cont__form,
+.t-cont__form__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.c-new-cont__form__label,
+.t-cont__form__input__field {
+  width: 100%;
+  height: 10vh;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.c-index-cont__category__name {
+  font-size: 20px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.c-index-cont__category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-index-cont__category__name__icon {
+  height: 10vh;
+}
+
+.c-index-cont__category__name__text {
+  margin-left: 10px;
+  color: #000;
+}
+
+.img-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-index-cont__category__amount {
+  color: #000;
+}
+
+.t-cont__form__input__label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  font-size: 20px;
+}
+
+.t-cont__form__input__label__detail {
+  font-size: 20px;
+  font-weight: 900;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.c-show-cont__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  font-size: 30px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.c-show-cont__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 30px;
+}
+
+.c-show-cont__item__text {
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    width: 100%;
+  }
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px;
+}
+
+.c-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-index-cont__item__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding: 10px;
+  color: #000;
+}

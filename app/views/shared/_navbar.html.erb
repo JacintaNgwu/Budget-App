@@ -1,0 +1,18 @@
+<div class="navbar">
+<% if params[:id].present? %>
+    <%= link_to categories_path, class: "navbar-item" do %>
+        <i class="fa fa-arrow-left"></i>
+        <% end %>
+        <% else %>
+        <%= link_to :back , class: "navbar-item" do %>
+            <i class="fa fa-arrow-left"></i>
+            <% end %>
+            <% end %>
+            <% p params  %>
+            <% if params[:action] == 'show' %>
+            <h2 class="navbar-title">Transactions</h2>
+            <% else %>
+            <h2 class="navbar-title"><%= params[:controller] %></h2>
+            <% end %>
+            <%= button_to "Log Out", destroy_user_session_path, method: :delete, class: "navbar-link" %>
+</div>
