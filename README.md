@@ -71,7 +71,7 @@
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://google.com)
+- [Live Demo Link](https://budget-app-56iz.onrender.com)
 
 - [Video Presentation](https://www.loom.com/share/b7e5378aa77a4fd584c551e77cedf6a3)
 
