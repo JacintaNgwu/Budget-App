@@ -1,0 +1,23 @@
+<div class="t-cont">
+    <%= form_with url: category_expenses_path, locale: true, method: :post do |form|%>
+        <div class='t-cont__form'>
+            <%= link_to :back do %>
+            <i class="fas fa-arrow-left"></i>
+            <% end %>
+            <h2 class="t-cont__form__title">New Transaction</h2>
+            <div class="t-cont__form__input">
+                <%= form.submit "Save", class: "t-cont__form__input__btn" %>
+            </div>
+        </div>
+        <%= render "shared/messages" %>
+        <div class="t-cont__form__input">
+            <%= form.text_field :name, class: "t-cont__form__input__field", required: true, placeholder: "Name" %>
+            <%= form.number_field :amount, required: true, class: "t-cont__form__input__field", placeholder: "Amount" %>
+        </div>
+        <div class="t-cont__form__input__label">
+        <p class="t-cont__form__input__label__detail">Select Category</p>
+        <%= form.select :category, current_user.categories.map { |c| [c.name, c.id] }, required: true, class: "t-cont__form__input__field" %>
+        </div>
+        <%= form.hidden_field :author_id, value: current_user.id %>
+    <% end %>
+</div>

@@ -1,0 +1,25 @@
+<div class ="c-index-cont">
+    <div>
+        <%= render "shared/navbar" %>
+        <%= render "shared/messages" %>
+        
+            <% @categories.each do |category| %>
+                <div class="c-index-cont__category__name">
+                <%= link_to category_path(category), class: "c-index-cont__category" do %>
+                        <div class="img-name">
+                        <%= image_tag(category.icon_url, class: "c-index-cont__category__name__icon") %>
+                        <p class="c-index-cont__category__name__text"><%= category.name %></p>
+                        </div>
+                        <div class="amt">                    
+                            <p class="c-index-cont__category__amount"><%= number_to_currency(category.total_amount)%></p>
+                        </div>
+                <% end %>
+            
+        </div>
+        <% end %>
+    </div>
+
+    <%= link_to new_category_path, class: "c-index-cont__new-category" do %>
+        <p class="c-index-cont__new-category__text">ADD CATEGORY</p>
+    <% end %>
+</div>

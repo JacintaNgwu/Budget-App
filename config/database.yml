@@ -90,7 +90,9 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: Budget_App_production
   host: localhost
   username: postgres
   password: Jaccy
+  
