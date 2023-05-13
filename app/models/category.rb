@@ -4,5 +4,8 @@ class Category < ApplicationRecord
     # associations
     belongs_to :author, class_name: 'User'
     has_many :categorizations, dependent: :destroy
-    has_many :details
+    has_many :expenses, through: :categorizations
+    def total_amount
+        expenses.sum(:amount)
+    end
 end

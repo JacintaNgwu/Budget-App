@@ -1,4 +1,4 @@
 class Categorization < ApplicationRecord
-    belongs_to :detail
+    belongs_to :expense
     belongs_to :category
 end

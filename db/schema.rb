@@ -10,36 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_12_034217) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_12_171640) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.bigint "author_id", null: false
     t.string "name"
     t.string "icon_url"
+    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_categories_on_author_id"
   end
 
   create_table "categorizations", force: :cascade do |t|
-    t.bigint "category_id"
-    t.bigint "detail_id"
+    t.bigint "category_id", null: false
+    t.bigint "expense_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_categorizations_on_category_id"
+    t.index ["expense_id"], name: "index_categorizations_on_expense_id"
   end
 
-  create_table "details", force: :cascade do |t|
+  create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
-    t.integer "category_id", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_details_on_category_id"
+    t.index ["author_id"], name: "index_expenses_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -49,9 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_12_034217) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -59,6 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_12_034217) do
 
   add_foreign_key "categories", "users", column: "author_id"
   add_foreign_key "categorizations", "categories"
-  add_foreign_key "categorizations", "details"
-  add_foreign_key "details", "categories"
+  add_foreign_key "categorizations", "expenses"
+  add_foreign_key "expenses", "users", column: "author_id"
 end

@@ -7,7 +7,10 @@ class CategoriesController < ApplicationController
 
     def show
         @category = Category.find(params[:id])
-        @group_details = Detail.where(category_id: params[:id])
+        @group_details = Expense.joins(:categorizations, :categories)
+        .where('expenses.id = categorizations.expense_id')
+        .where('categories.id = categorizations.category_id')
+        .where('categories.id = ?', params[:id]).order('expenses.created_at DESC')
     end
 
     def new

@@ -3,21 +3,21 @@
         <%= render "shared/navbar" %>
         <%= render "shared/messages" %>
         <div class="c-show-cont__title">
-            <p class="c-show-cont__title__text"><%= @category.name %> Category Expenses:</p>
-            <p class="c-show-cont__title__text"><%= number_to_currency(@group_details.sum(:amount)) %></p>
+            <p class="c-show-cont__title__text"><%= @category.name %></p>
+            <p class="c-show-cont__title__text"><%= number_to_currency (@category.total_amount) %></p>
         </div>
 
-        <% @group_details.each do |detail| %>
+        <% @group_details.each do |expense| %>
             <div class="c-show-cont__items">
                 <div class="c-show-cont__item">
-                    <p class="c-show-cont__item__text"><%= detail.name %></p>
-                    <p class="c-show-cont__item__text"><%= detail.created_at.strftime("%d %b %y") %></p>
+                    <p class="c-show-cont__item__text"><%= expense.name %></p>
+                    <p class="c-show-cont__item__text"><%= expense.created_at.strftime("%d %b %y") %></p>
                 </div>
-                <p class="c-show-cont__item__text"><%= number_to_currency(detail.amount) %></p>
+                <p class="c-show-cont__item__text"><%= number_to_currency(expense.amount) %></p>
             </div>
         <% end %>
     </div>
-    <%= link_to new_category_detail_path(@category), class: "c-show-cont__btn" do %>
+    <%= link_to new_category_expense_path(@category), class: "c-show-cont__btn" do %>
         <p class="c-show-cont__text">Add Transaction</p>
     <% end %>
 </div>

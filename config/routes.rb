@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'home#index'
   resources :categories, only: %i[index show new create destroy] do
-    resources :details, only: %i[new create destroy]
+    resources :expenses, only: [:new, :create ]
   end
 end

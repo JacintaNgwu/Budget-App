@@ -30,8 +30,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 70vh;
+    width: 80vw;
+    height: 100vh;
+  }
+
+  .home-cont__header__title {
+   font-size: 40px;
+   display: flex;
+   justify-content: center;
+    align-items: center;
   }
 
   .home-cont__body {
@@ -114,7 +121,7 @@
 .navbar-link,
 .c-new-cont__title__btn__text,
 .t-cont__form__input__btn {
-    margin-right: 100px;
+    margin-right: 10px;
     border: none;
     background-color: transparent;
     color: #fff;
@@ -163,26 +170,20 @@
     font-size: 20px;
 }
 
-.c-index-cont__category__name,
-.c-show-cont__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10vh;
-    width: 70%;
+.c-index-cont__category__name {
     font-size: 20px;
     border: 1px solid #ccc;
-    margin-top: 50px;
-    margin-left: 200px;
-    padding: 30px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
+.c-index-cont__category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .c-index-cont__category__name__icon {
-    margin-right: 10px;
-    width: 8%;
     height: 10vh;
-    margin: 100px;
-    padding: 10px;
 }
 
 .c-index-cont__category__name__text {
@@ -190,8 +191,13 @@
     color: #000;
 }
 
+.img-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .c-index-cont__category__amount {
-    margin-right: 200px;
     color: #000;
 }
 
@@ -210,4 +216,41 @@
     font-weight: 900;
     color: #000;
     margin-bottom: 20px;
+}
+
+.c-show-cont__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.c-show-cont__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  padding: 30px;
+  margin: 10px;
+}
+
+.c-show-cont__item__text {
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    width: 100%;
+  }
+}
+
+.fa {
+  color: #fff;
+  font-size: 30px;
 }
