@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Category, type: :model do
+RSpec.describe Expense, type: :model do
   before :each do
     @user = User.create(
       name: 'Gabriel',
@@ -20,33 +20,33 @@ RSpec.describe Category, type: :model do
       category_ids: @cat1.id
     )
   end
-  context 'Category model validation' do
+  context 'Transaction model validation' do
     it 'name should be present' do
-      @cat1.name = nil
-      expect(@cat1).to_not be_valid
+      @expense1.name = nil
+      expect(@expense1).to_not be_valid
     end
 
     it 'name shouldnt be blank' do
-      @cat1.name = ''
-      expect(@cat1).to_not be_valid
+      @expense1.name = ''
+      expect(@expense1).to_not be_valid
     end
 
-    it 'icon_url should be present' do
-      @cat1.icon_url = nil
-      expect(@cat1).to_not be_valid
+    it 'amount should be present' do
+      @expense1.amount = nil
+      expect(@expense1).to_not be_valid
     end
 
-    it 'icon_url shouldnt be blank' do
-      @cat1.icon_url = ''
-      expect(@cat1).to_not be_valid
+    it 'amount shouldnt be blank' do
+      @expense1.amount = ''
+      expect(@expense1).to_not be_valid
     end
 
-    it 'category has user' do
-      expect(@cat1.author).to eq(@user)
+    it 'transaction has user' do
+      expect(@expense1.author).to eq(@user)
     end
 
     it 'category has transaction' do
-      expect(@cat1.expenses).to include(@expense1)
+      expect(@expense1.categories).to include(@cat1)
     end
   end
 end
