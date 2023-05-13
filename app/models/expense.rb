@@ -1,5 +1,5 @@
 class Expense < ApplicationRecord
-validates :name, presence: true
+  validates :name, presence: true
   validates :amount, presence: true
   # associations
   belongs_to :author, class_name: 'User'
